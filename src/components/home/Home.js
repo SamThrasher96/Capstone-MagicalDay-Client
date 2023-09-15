@@ -18,7 +18,9 @@ export const Home = () => {
                 <button className="button" onClick={() => {
                     navigate("/shows");
                 }}>Shows</button>
-                <button className="button">Reservations</button>
+                <button className="button" onClick={() => {
+                    navigate("/reservations");
+                }}>Reservations</button>
             </div>
         </main>
     );

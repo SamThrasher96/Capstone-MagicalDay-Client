@@ -1,0 +1,56 @@
+/* reservations.css */
+
+.reservations-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Make sure it takes up the full viewport height */
+}
+
+.reservations-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the cards horizontally within the container */
+}
+
+.reservation-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px; /* Increase padding for larger cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    width: calc(25% - 20px); /* Adjust as needed to control the number of cards per row and card width */
+    min-width: 250px; /* Set a minimum card width */
+}
+
+.reservation-card:hover {
+    transform: scale(1.02); /* Add a slight zoom effect on hover */
+}
+
+.reservation-location {
+    font-weight: bold;
+}
+
+.reservation-guest {
+    margin-top: 10px; /* Increase margin for better spacing */
+}
+
+.reservation-date {
+    margin-top: 10px; /* Increase margin for better spacing */
+}
+
+.reservation-time {
+    margin-top: 10px; /* Increase margin for better spacing */
+}
+
+/* Placeholder for the reservation image (adjust as needed) */
+.reservation-image {
+    width: 100%;
+    height: auto;
+    /* Add additional styling for the image here */
+}
+
