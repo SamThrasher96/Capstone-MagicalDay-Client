@@ -15,3 +15,12 @@ export const getUserReservations = ({ token }) => {
         throw error; 
     });
 }
+
+export const deleteReservation = ({ reservationId }) => {
+    return fetch(`http://localhost:8000/reservations/${reservationId}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+}
