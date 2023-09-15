@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './home.css';
 
 export const Home = () => {
     const navigate = useNavigate();
@@ -11,8 +12,12 @@ export const Home = () => {
                 <button className="button" onClick={() => {
                     navigate("/rides");
                 }}>Rides</button>
-                <button className="button">Restaurants</button>
-                <button className="button">Shows</button>
+                <button className="button" onClick={() => {
+                    navigate("/restaurants");
+                }}>Restaurants</button>
+                <button className="button" onClick={() => {
+                    navigate("/shows");
+                }}>Shows</button>
                 <button className="button">Reservations</button>
             </div>
         </main>
