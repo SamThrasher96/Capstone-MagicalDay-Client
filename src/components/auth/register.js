@@ -21,9 +21,10 @@ export const Register = ({ setToken, setUserId }) => {
         if (password.current.value === verifyPassword.current.value) {
             console.log("Passwords match");
             const newUser = {
-                firstName: firstName.current.value,
-                lastName: lastName.current.value,
+                first_name: firstName.current.value,
+                last_name: lastName.current.value,
                 email: email.current.value,
+                password: password.current.value,
                 height: height.current.value,
                 profile_picture: profile_picture.current.value
             }

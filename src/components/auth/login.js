@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/authManager"
 
-export const Login = ({ setToken, setIsStaff, setUserId }) => {
+export const Login = ({ setToken, setUserId }) => {
     const email = useRef()
     const password = useRef()
     const navigate = useNavigate()
@@ -18,9 +18,8 @@ export const Login = ({ setToken, setIsStaff, setUserId }) => {
         loginUser(user).then(res => {
             if ("valid" in res && res.valid) {
                 setToken(res.token)
-                setIsStaff(res.token)
                 setUserId(res.user)
-                navigate("/")
+                navigate("/Home")
             }
             else {
                 setIsUnsuccessful(true)
@@ -37,7 +36,7 @@ export const Login = ({ setToken, setIsStaff, setUserId }) => {
                 <div className="field">
                     <label className="label">Email</label>
                     <div className="control">
-                        <input className="input" type="text" ref={email} />
+                        <input className="input" type="email" ref={email} />
                     </div>
                 </div>
 

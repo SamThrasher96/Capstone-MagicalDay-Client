@@ -18,6 +18,6 @@ export const MagicalDay = () => {
     }
 
     return <>
-        <ApplicationViews token={token} setToken={setToken} setId ={userId} setUserId={setUserId} />
+        <ApplicationViews token={token} setToken={setToken} setUserId={setUserId} />
     </>
 }
