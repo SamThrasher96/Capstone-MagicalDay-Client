@@ -3,6 +3,7 @@ import { Login } from "../components/auth/login";
 import { Register } from "../components/auth/register";
 import { Authorized } from "./Authorized";
 import { Home } from "../components/home/Home";
+import { AllRides } from "../components/rides/Rides";
 
 export const ApplicationViews = ({ token, setToken, setUserId }) => {
     return (
@@ -11,6 +12,7 @@ export const ApplicationViews = ({ token, setToken, setUserId }) => {
             <Route path="/register" element={<Register setToken={setToken} setUserId={setUserId} />} />
             <Route path="/authorized/*" element={<Authorized />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/rides" element={<AllRides />} />
         </Routes>
     );
 };
