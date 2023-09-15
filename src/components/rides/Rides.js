@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getAllRideDetails } from "../../managers/rideManager";
-import "./ride.css"; // Import your CSS file for styling
+import "./ride.css"; 
 
 export const AllRides = () => {
     const [rides, setRides] = useState([]);
