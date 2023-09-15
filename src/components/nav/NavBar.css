@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #0074e4; 
+}
+
+.navbar-item {
+    color: white; 
+    font-weight: bold;
+}
+
+.navbar-start {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar-end {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.button {
+    margin-left: 8px; 
+}

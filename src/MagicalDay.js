@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { ApplicationViews } from "./views/ApplicationViews"
+import { NavBar } from "./components/nav/NavBar"
 
 
 export const MagicalDay = () => {
@@ -18,6 +19,7 @@ export const MagicalDay = () => {
     }
 
     return <>
+        <NavBar token={token} setToken={setToken} setUserId={setUserId} />
         <ApplicationViews token={token} setToken={setToken} setUserId={setUserId} />
     </>
 }
