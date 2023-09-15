@@ -4,7 +4,7 @@ export const Home = () => {
     return (
         <main className="container">
             <h1>Magical Day</h1>
-            <h2>Where Magic Happens</h2>
+            <h2>Where the Magic Happens</h2>
             <div className="buttons">
                 <button className="button">Rides</button>
                 <button className="button">Restaurants</button>
