@@ -16,7 +16,6 @@ export const NavBar = ({ token, setToken, isStaff, setIsStaff, setUserId }) => {
         <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item" href="/"></a>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showNavbar} ref={hamburger}>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -28,6 +27,7 @@ export const NavBar = ({ token, setToken, isStaff, setIsStaff, setUserId }) => {
                 <div className="navbar-start">
                     <div>
                         <Link to="/home" className="navbar-item">Home</Link>
+                        <Link to='/user' className="navbar-item">User</Link>
                     </div>
                 </div>
     
