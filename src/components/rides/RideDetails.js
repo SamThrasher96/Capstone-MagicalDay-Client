@@ -8,8 +8,6 @@ export const RideDetails = ({ token }) => {
     const [ride, setRide] = useState({});
     const navigate = useNavigate();
 
-    console.log(rideId)
-
     useEffect(() => {
         getSingleRideDetails(rideId).then((data) => {
             setRide(data);

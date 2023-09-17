@@ -10,6 +10,7 @@ import { UserReservations } from "../components/reservations/UserReservations";
 import { User } from "../components/user/User";
 import { EditUser } from "../components/user/EditUser";
 import { RideDetails } from "../components/rides/RideDetails";
+import { RestaurantDetails } from "../components/restaurants/RestaurantDetails";
 
 export const ApplicationViews = ({ token, setToken, setUserId }) => {
     return (
@@ -25,6 +26,7 @@ export const ApplicationViews = ({ token, setToken, setUserId }) => {
             <Route path="/user" element={<User token={token} />} />
             <Route path="/user/EditUser" element={<EditUser token={token} />} />
             <Route path="/rides/:rideId" element={<RideDetails />} />
+            <Route path="/restaurants/:restaurantId" element={<RestaurantDetails />} />
         </Routes>
     );
 };
