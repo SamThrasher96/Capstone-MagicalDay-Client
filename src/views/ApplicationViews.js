@@ -8,6 +8,7 @@ import { AllShows } from "../components/shows/Shows";
 import { AllRestaurants } from "../components/restaurants/Restaurants";
 import { UserReservations } from "../components/reservations/UserReservations";
 import { User } from "../components/user/User";
+import { EditUser } from "../components/user/EditUser";
 
 export const ApplicationViews = ({ token, setToken, setUserId }) => {
     return (
@@ -21,6 +22,7 @@ export const ApplicationViews = ({ token, setToken, setUserId }) => {
             <Route path="/restaurants" element={<AllRestaurants />} />
             <Route path="/reservations" element={<UserReservations />} />
             <Route path="/user" element={<User token={token} />} />
+            <Route path="/user/EditUser" element={<EditUser token={token} />} />
         </Routes>
     );
 };

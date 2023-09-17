@@ -23,10 +23,12 @@ export const User = ({ token }) => {
                     >
                         <h2>Name: {guest.full_name}</h2>
                         <h2>height: {guest.height}</h2>
+                        <button className="button" onClick={() => {
+                            navigate("/user/EditUser");
+                        }}>Edit User</button>
                     </div>
                     ))}
             </div>
         </div>
     );
-
 }
