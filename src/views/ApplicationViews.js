@@ -11,6 +11,7 @@ import { User } from "../components/user/User";
 import { EditUser } from "../components/user/EditUser";
 import { RideDetails } from "../components/rides/RideDetails";
 import { RestaurantDetails } from "../components/restaurants/RestaurantDetails";
+import { ShowDetails } from "../components/shows/ShowDetails";
 
 export const ApplicationViews = ({ token, setToken, setUserId }) => {
     return (
@@ -27,6 +28,7 @@ export const ApplicationViews = ({ token, setToken, setUserId }) => {
             <Route path="/user/EditUser" element={<EditUser token={token} />} />
             <Route path="/rides/:rideId" element={<RideDetails />} />
             <Route path="/restaurants/:restaurantId" element={<RestaurantDetails />} />
+            <Route path="/shows/:showId" element={<ShowDetails />} />
         </Routes>
     );
 };
