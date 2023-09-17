@@ -9,3 +9,15 @@ export const getAllRestaurantDetails = () => {
     })
     .then(response => response.json());
 };
+
+export const getSingleRestaurantDetails = (restaurantId) => {
+    const token = localStorage.getItem("auth_token");
+    const headers = token
+        ? { "Authorization": `Token ${token}` }
+        : {};
+
+    return fetch(`http://localhost:8000/restaurantdetails/${restaurantId}`, {
+        headers
+    })
+    .then(response => response.json());
+};
