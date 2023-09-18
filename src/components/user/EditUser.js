@@ -51,6 +51,7 @@ export const EditUser = ({ token }) => {
                         required
                         className="form-control"
                         value={users.password}
+                        placeholder="Password"
                         onChange={changeUserState}
                     />
                 </div>
