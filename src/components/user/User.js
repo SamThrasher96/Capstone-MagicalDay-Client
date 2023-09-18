@@ -4,7 +4,7 @@ import { getUser } from "../../managers/userManager";
 import "./user.css";
 
 export const User = ({ token }) => {
-    const [guests, setGuest] = useState({});
+    const [guests, setGuest] = useState([]);
     const { userId } = useParams();
     const navigate = useNavigate();
 
@@ -22,8 +22,9 @@ export const User = ({ token }) => {
                         className="user-card"
                         key={`user--${guest.id}`}
                     >
+                        <img src={guest.profile_picture} alt={guest.full_name} className="profile-picture" />
                         <h2>Name: {guest.full_name}</h2>
-                        <h2>height: {guest.height}</h2>
+                        <h2>Email: {guest.email}</h2>
                         <button className="button" onClick={() => {
                             navigate("/user/EditUser");
                         }}>Edit User</button>
