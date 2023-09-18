@@ -24,3 +24,16 @@ export const deleteReservation = ({ reservationId }) => {
         }
     })
 }
+
+export const createReservation =  async (reservation) => {
+    const res = await fetch("http://localhost:8000/reservations", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        },
+        body: JSON.stringify(reservation)
+    });
+    return await res.json();
+}

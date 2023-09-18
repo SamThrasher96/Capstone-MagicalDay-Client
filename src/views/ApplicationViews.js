@@ -12,8 +12,9 @@ import { EditUser } from "../components/user/EditUser";
 import { RideDetails } from "../components/rides/RideDetails";
 import { RestaurantDetails } from "../components/restaurants/RestaurantDetails";
 import { ShowDetails } from "../components/shows/ShowDetails";
+import { CreateUserReservation } from "../components/reservations/ReservationForm";
 
-export const ApplicationViews = ({ token, setToken, setUserId }) => {
+export const ApplicationViews = ({ token, setToken, setUserId}) => {
     return (
         <Routes>
             <Route path="/login" element={<Login setToken={setToken} setUserId={setUserId} />} />
@@ -29,6 +30,7 @@ export const ApplicationViews = ({ token, setToken, setUserId }) => {
             <Route path="/rides/:rideId" element={<RideDetails />} />
             <Route path="/restaurants/:restaurantId" element={<RestaurantDetails />} />
             <Route path="/shows/:showId" element={<ShowDetails />} />
+            <Route path="/reservations/create" element={<CreateUserReservation />} />
         </Routes>
     );
 };

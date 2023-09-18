@@ -73,6 +73,9 @@ export const UserReservations = ({ token }) => {
                     <button onClick={cancelDelete}>No</button>
                 </div>
             )}
+            <button className="button" onClick={() => {
+                    navigate("/reservations/create");
+                }}>Make a reservation!</button>
         </div>
     );
 };
