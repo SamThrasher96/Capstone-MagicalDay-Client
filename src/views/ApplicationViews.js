@@ -26,7 +26,7 @@ export const ApplicationViews = ({ token, setToken, setUserId}) => {
             <Route path="/restaurants" element={<AllRestaurants />} />
             <Route path="/reservations" element={<UserReservations />} />
             <Route path="/user" element={<User token={token} />} />
-            <Route path="/user/EditUser" element={<EditUser token={token} />} />
+            <Route path="/user/EditUser" element={<EditUser token={token} setToken={setToken}/>} />
             <Route path="/rides/:rideId" element={<RideDetails />} />
             <Route path="/restaurants/:restaurantId" element={<RestaurantDetails />} />
             <Route path="/shows/:showId" element={<ShowDetails />} />

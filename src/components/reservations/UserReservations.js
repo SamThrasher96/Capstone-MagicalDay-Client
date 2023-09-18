@@ -54,7 +54,7 @@ export const UserReservations = ({ token }) => {
                         className="reservation-card"
                         key={`reservation--${reservation.id}`}
                         onClick={() => {
-                            navigate(`/reservations/${reservation.id}`);
+                            navigate(`/reservations`);
                         }}
                     >
                         <img src={reservation.reservation_image} alt={reservation.reservation_location_name} className="reservation-image" />
