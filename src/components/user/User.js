@@ -12,6 +12,7 @@ export const User = ({ token }) => {
         getUser(token).then((data) => { setGuest(data); });
     }, [token]);
 
+
     return (
         <div className="user-container">
             <h2>User Profile</h2>

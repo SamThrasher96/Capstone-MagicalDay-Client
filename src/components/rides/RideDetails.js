@@ -21,6 +21,7 @@ export const RideDetails = ({ token }) => {
                 <img src={ride.ride_image} alt={ride.ride_name} className="ride-picture" />
                 <div className="ride-name">{ride.ride_name}</div>
                 <div className="ride-description">{ride.ride_description}</div>
+                <div className="ride-wait-time"> The current wait time for this ride is {ride.expected_wait_time} minutes. </div>
                 <div className="ride-open"> This ride opens at {ride.ride_open}</div>
                 <div className="ride-close"> This ride closes at {ride.ride_close}</div>
             </div>

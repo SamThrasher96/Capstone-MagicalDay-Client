@@ -21,7 +21,7 @@ export const ShowDetails = ({ token }) => {
                 <img src={show.show_image} alt={show.show_name} className="show-picture" />
                 <div className="show-name">{show.show_name}</div>
                 <div className="show-description">{show.show_description}</div>
-                <div className="show-duration">This show lasts for {show.duration} minutes</div>
+                <div className="show-duration">This show lasts for {show.duration} minutes. </div>
                 <div className="show-open"> This show opens at {show.show_open}</div>
                 <div className="show-close"> This show closes at {show.show_close}</div>
             </div>
