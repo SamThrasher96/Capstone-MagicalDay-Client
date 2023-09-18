@@ -5,19 +5,19 @@ import "./user.css";
 
 export const EditUser = ({ token }) => {
     const navigate = useNavigate();
-    const [user, setUser] = useState({
-        full_name: "", 
+    const [users, setUser] = useState({
+        user: "",
         email: "",
         password: "",
-        profile_pic: "",
+        profile_picture: ""
     });
-    const id = user.id;
+    const id = users.id;
+
 
     useEffect(() => {
-        getUser(token).then((data) => {
-            setUser(data);
-        });
+        getUser(token).then((data) => setUser(data[0]));
     }, [token]);
+    
 
     const changeUserState = (event) => {
         const { name, value } = event.target;
@@ -27,50 +27,19 @@ export const EditUser = ({ token }) => {
         }));
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        const updatedUser = {
-            full_name: user.full_name,
-            email: user.email,
-            password: user.password,
-            profile_pic: user.profile_pic,
-        };
-
-        editUser(id, updatedUser, token)
-            .then((response) => {
-                console.log("User updated successfully:", response);
-                navigate(`/user/${id}`);
-            })
-            .catch((error) => {
-                console.error("Error updating user:", error);
-            });
-    };
-
     return (
-        <form className="user-form" onSubmit={handleSubmit}>
-            <h2 className="userFrom-Title">Edit User</h2>
+        <form className="user-form">
+            <h2 className="userForm-Title">Edit User</h2>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="full_name">Full Name:</label>
-                    <input
-                        type="text"
-                        name="full_name"
-                        required
-                        autoFocus
-                        className="form-control"
-                        value={user.full_name || ""}
-                        onChange={changeUserState}
-                    />
-                </div>
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
                         name="email"
                         required
+                        autoFocus
                         className="form-control"
-                        value={user.email || ""}
+                        value={users.email}
                         onChange={changeUserState}
                     />
                 </div>
@@ -81,7 +50,7 @@ export const EditUser = ({ token }) => {
                         name="password"
                         required
                         className="form-control"
-                        value={user.password || ""}
+                        value={users.password}
                         onChange={changeUserState}
                     />
                 </div>
@@ -92,12 +61,37 @@ export const EditUser = ({ token }) => {
                         name="profile_pic"
                         required
                         className="form-control"
-                        value={user.profile_pic || ""}
+                        value={users.profile_picture}
                         onChange={changeUserState}
                     />
                 </div>
             </fieldset>
-            <button type="submit" className="btn btn-primary">Save</button>
+            <button
+                type="submit"
+                onClick={(evt) => {
+                    evt.preventDefault();
+
+                    const updatedUser = {
+                        id: users.id,
+                        user: users.user.id,
+                        username: users.email,
+                        password: users.password,
+                        profile_picture: users.profile_picture,
+                    };
+
+                    editUser(updatedUser)
+                        .then((response) => {
+                            console.log("User updated successfully:", response);
+                            navigate(`/user`);
+                        })
+                        .catch((error) => {
+                            console.error("Error updating user:", error);
+                        });
+                }}
+                className="btn btn-primary"
+            >
+                Update User
+            </button>
         </form>
     );
-}
+};

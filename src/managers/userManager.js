@@ -7,8 +7,8 @@ export const getUser = (token) => {
     .then(response => response.json())
 }
 
-export const editUser = (id, guest) => {
-    return fetch(`http://localhost:8000/guests/${id}`, {
+export const editUser = (guest) => {
+    return fetch(`http://localhost:8000/guests/${guest.id}`, {
         method: 'PUT',
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`,
