@@ -1,16 +1,17 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
+import logoImage from "./Magical Day.png";
 
 export const NavBar = ({ token, setToken, isStaff, setIsStaff, setUserId }) => {
-    const navigate = useNavigate()
-    const navbar = useRef()
-    const hamburger = useRef()
+    const navigate = useNavigate();
+    const navbar = useRef();
+    const hamburger = useRef();
 
     const showNavbar = () => {
-        hamburger.current.classList.toggle('is-active')
-        navbar.current.classList.toggle('is-active')
-    }
+        hamburger.current.classList.toggle('is-active');
+        navbar.current.classList.toggle('is-active');
+    };
 
     return (
         <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
@@ -22,17 +23,21 @@ export const NavBar = ({ token, setToken, isStaff, setIsStaff, setUserId }) => {
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-    
+
             <div className="navbar-menu" ref={navbar}>
                 <div className="navbar-start">
                     <div>
-                        <Link to="/home" className="navbar-item">Home</Link>
-                        <Link to='/user' className="navbar-item">User</Link>
+                        <Link to="/home" className="navbar-item">
+                            <button className="button is-white is-outlined">Home</button>
+                        </Link>
+                        <Link to="/user" className="navbar-item">
+                            <button className="button is-white is-outlined">User</button>
+                        </Link>
                     </div>
                 </div>
-    
+
                 <div className="navbar-end">
-                    <div>
+                    <div className="navbar-item">
                         {token ? (
                             <button
                                 className="button is-outlined"
@@ -41,7 +46,7 @@ export const NavBar = ({ token, setToken, isStaff, setIsStaff, setUserId }) => {
                                     navigate("/login");
                                 }}
                             >
-                                Logout
+                                Log Out
                             </button>
                         ) : (
                             <>
@@ -58,4 +63,4 @@ export const NavBar = ({ token, setToken, isStaff, setIsStaff, setUserId }) => {
             </div>
         </nav>
     );
-}
+};

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSingleShowDetails } from "../../managers/showManager"; 
+import { formatTime } from "../../managers/generalManager";
 import "./show.css"; 
 
 export const ShowDetails = ({ token }) => {
@@ -22,8 +23,8 @@ export const ShowDetails = ({ token }) => {
                 <div className="show-name">{show.show_name}</div>
                 <div className="show-description">{show.show_description}</div>
                 <div className="show-duration">This show lasts for {show.duration} minutes. </div>
-                <div className="show-open"> This show opens at {show.show_open}</div>
-                <div className="show-close"> This show closes at {show.show_close}</div>
+                <div className="show-open"> This show opens at {formatTime(show.show_open)}</div>
+                <div className="show-close"> This show closes at {formatTime(show.show_close)}</div>
             </div>
             <button className="button" onClick={() => {
                 navigate("/shows");
