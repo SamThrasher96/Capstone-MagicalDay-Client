@@ -1,11 +1,10 @@
-/* Set Navbar to stay fixed at the top */
 .navbar {
     background-color: #0074e4;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100; /* Ensure Navbar is on top of other content */
+    z-index: 100; 
 }
 
 .navbar-item {
@@ -17,15 +16,27 @@
     flex-grow: 1;
     display: flex;
     justify-content: flex-start;
-    padding-left: 16px; /* Add padding to the left to avoid content under the Navbar */
+    padding-left: 16px;
 }
 
 .navbar-end {
     display: flex;
     justify-content: flex-end;
-    padding-right: 16px; /* Add padding to the right to avoid content under the Navbar */
+    padding-right: 16px; 
 }
 
 .button {
     margin-left: 8px;
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; 
+    min-height: 100%; 
+}
+
+.navbar-image {
+    max-height: 75px; 
 }

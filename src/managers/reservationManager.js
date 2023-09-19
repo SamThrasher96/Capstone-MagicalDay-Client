@@ -1,5 +1,7 @@
 export const getUserReservations = ({ token }) => {
-    return fetch("http://localhost:8000/reservations?user", {
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    return fetch(`http://localhost:8000/reservations?user`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -9,6 +11,13 @@ export const getUserReservations = ({ token }) => {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         return response.json();
+    })
+    .then((reservations) => {
+        const filteredReservations = reservations.filter((reservation) => {
+            const reservationDate = reservation.date;
+            return reservationDate >= currentDate;
+        });
+        return filteredReservations;
     })
     .catch((error) => {
         console.error("Error fetching user reservations:", error);

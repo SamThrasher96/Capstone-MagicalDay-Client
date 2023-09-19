@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSingleRideDetails } from "../../managers/rideManager";
+import { formatTime } from "../../managers/generalManager";
 import "./ride.css";
 
 export const RideDetails = ({ token }) => {
@@ -14,6 +15,7 @@ export const RideDetails = ({ token }) => {
         });
     } ,[rideId]);
 
+
     return (
         <div className="ride-container">
             <h2>Ride Details</h2>
@@ -22,8 +24,8 @@ export const RideDetails = ({ token }) => {
                 <div className="ride-name">{ride.ride_name}</div>
                 <div className="ride-description">{ride.ride_description}</div>
                 <div className="ride-wait-time"> The current wait time for this ride is {ride.expected_wait_time} minutes. </div>
-                <div className="ride-open"> This ride opens at {ride.ride_open}</div>
-                <div className="ride-close"> This ride closes at {ride.ride_close}</div>
+                <div className="ride-open"> This ride opens at {formatTime(ride.ride_open)}</div>
+                <div className="ride-close"> This ride closes at {formatTime(ride.ride_close)}</div>
             </div>
             <button className="button" onClick={() => {
                 navigate("/rides");

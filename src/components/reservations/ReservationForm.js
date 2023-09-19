@@ -22,6 +22,26 @@ export const CreateUserReservation = () => {
 
     const handleSaveButtonClick = async (event) => {
         event.preventDefault();
+        const location = allLocations.find((loc) => loc.id === reservation.location);
+    
+        const { opening_time, closing_time } = location;
+    
+        const selectedTime = new Date(reservation.date + " " + reservation.time);
+        const openingTime = new Date(reservation.date + " " + opening_time);
+        const closingTime = new Date(reservation.date + " " + closing_time);
+    
+        const currentDate = new Date().toISOString().split('T')[0];
+    
+        if (reservation.date < currentDate) {
+            window.alert("Please select today's date or a future date.");
+            return;
+        }
+    
+        if (selectedTime < openingTime || selectedTime > closingTime) {
+            window.alert("We're sorry! The location you selected is closed at that time. Please select a different time.");
+            return;
+        }
+    
         const finishedReservation = { ...reservation };
         const createdReservation = await createReservation(finishedReservation);
         setSuccessMessage("Reservation saved successfully!"); 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getUserReservations, deleteReservation } from "../../managers/reservationManager";
+import { formatTime, formatDate } from "../../managers/generalManager";
 import "./reservations.css";
 
 export const UserReservations = ({ token }) => {
@@ -59,8 +60,8 @@ export const UserReservations = ({ token }) => {
                     >
                         <img src={reservation.reservation_image} alt={reservation.reservation_location_name} className="reservation-image" />
                         <div className="reservation-location">Your reservation is at {reservation.reservation_location_name}</div>
-                        <div className="reservation-date">Reservation Date: {reservation.date}</div>
-                        <div className="reservation-time">Reservation time: {reservation.time}</div>
+                        <div className="reservation-date">Reservation Date: {formatDate(reservation.date)}</div>
+                        <div className="reservation-time">Reservation time: {formatTime(reservation.time)}</div>
                         <button onClick={() => handleDelete(reservation.id)} className="delete-button">Delete</button>
                     </div>
                 ))}
