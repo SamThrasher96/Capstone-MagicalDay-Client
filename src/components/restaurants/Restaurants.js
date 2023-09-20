@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getAllRestaurantDetails } from "../../managers/restaurantManager"; 
 import "./restaurant.css";
 
 export const AllRestaurants = () => {
     const [restaurants, setRestaurants] = useState([]);
-    const { restaurantId } = useParams();
+    const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -14,11 +14,22 @@ export const AllRestaurants = () => {
         });
     }, []);
 
+    const filteredRestaurants = restaurants.filter((restaurant) =>
+        restaurant.restaurant_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div className="restaurants-container">
             <h2>All Restaurants</h2>
+            <input
+                type="text"
+                placeholder="Search for rides..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+            />
             <div className="restaurants-list">
-                {restaurants.map((restaurant) => (
+                {filteredRestaurants.map((restaurant) => (
                     <div
                         className="restaurant-card"
                         key={`restaurant--${restaurant.id}`}
