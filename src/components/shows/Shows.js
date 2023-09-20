@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getAllShowDetails } from "../../managers/showManager";
 import "./show.css"; 
 
 export const AllShows = () => {
     const [shows, setShows] = useState([]);
-    const { showId } = useParams();
+    const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -14,11 +14,22 @@ export const AllShows = () => {
         });
     }, []);
 
+    const filteredShows = shows.filter((show) =>
+        show.show_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div className="shows-container">
             <h2>All Shows</h2>
+            <input
+                type="text"
+                placeholder="Search for rides..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+            />
             <div className="shows-list">
-                {shows.map((show) => (
+                {filteredShows.map((show) => (
                     <div
                         className="show-card"
                         key={`show--${show.id}`}
