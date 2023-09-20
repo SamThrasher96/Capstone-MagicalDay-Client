@@ -13,7 +13,10 @@ export const Home = () => {
             </video>
             <div className="content">
                 <h1>Magical Day</h1>
-                <h2>Where the Magic Happens</h2>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 <div className="buttons">
                     <button className="button" onClick={() => {
                         navigate("/rides");

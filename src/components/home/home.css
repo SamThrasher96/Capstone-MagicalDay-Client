@@ -1,19 +1,19 @@
-/* Center the content vertically and horizontally */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Make the container take the full viewport height */
+    margin-top: 0px;
+    height: calc(100vh - 50px);
+    position: relative;
 }
 
-/* Style the buttons */
 .button {
-    margin: 10px; /* Add spacing around buttons */
-    padding: 15px 30px; /* Increase padding for bigger buttons */
-    font-size: 18px; /* Increase font size */
-    background-color: #0074e4; /* Blue color similar to Disney */
-    color: white; /* White text color for buttons */
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #0074e4;
+    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -21,21 +21,34 @@
 }
 
 .button:hover {
-    background-color: #0050a2; /* Darker blue on hover */
+    background-color: #0050a2;
 }
 
-/* home.css */
+.video-container {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .video-banner {
     width: 100%;
-    max-height: 390px; /* Adjust the max-height to your desired value */
-    object-fit: cover; /* Ensure the video covers the entire container */
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .content {
-    position: relative; /* Ensure content is displayed on top of the video */
-    z-index: 1; /* Set the content above the video */
-    background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent background to make text more readable */
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
+    text-align: center;
 }
 
 /* Additional styles for your content */
