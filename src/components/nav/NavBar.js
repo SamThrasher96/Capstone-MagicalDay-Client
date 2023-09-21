@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
-import logoImage from "./Magical Day.png";
 
 export const NavBar = ({ token, setToken, isStaff, setIsStaff, setUserId }) => {
     const navigate = useNavigate();
