@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getUser } from "../../managers/userManager";
 import "./user.css";
 
 export const User = ({ token }) => {
     const [guests, setGuest] = useState([]);
-    const { userId } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {

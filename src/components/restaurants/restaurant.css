@@ -34,14 +34,12 @@
     object-fit: cover; 
 }
 
-/* Updated style for the menu cards container */
 .menu-list {
     display: flex;
-    flex-wrap: wrap; /* Wrap menu cards to the next row when they exceed the container width */
-    justify-content: center; /* Center menu cards horizontally within the container */
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
-/* Style for each menu card */
 .menu-card {
     width: 300px;
     border: 1px solid #ccc;
