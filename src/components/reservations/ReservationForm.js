@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import { createReservation } from "../../managers/reservationManager";
 import { getAllLocations } from "../../managers/locationManager";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./reservations.css";
 
 export const CreateUserReservation = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const initialLocationId = queryParams.get("locationId");
+
     const [reservation, updateReservation] = useState({
-        location: 0,
+        location: initialLocationId ? parseInt(initialLocationId) : 0,
         date: '',
         time: ''
     });
+
     const [allLocations, setLocations] = useState([]);
     const [successMessage, setSuccessMessage] = useState(null);
 
