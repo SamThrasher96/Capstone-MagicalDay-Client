@@ -38,6 +38,9 @@ export const RestaurantDetails = ({ token }) => {
             <button className="button" onClick={() => {
                 navigate("/restaurants");
             }}>Back</button>
+            <button className="button" onClick={() => {
+                    navigate(`/reservations/create?locationId=${restaurant.location.id}`);
+                }}>Make a reservation!</button>
             <h2>Menu</h2>
             <div className="menu-list">
                 {menuItems.map((menuItem) => (

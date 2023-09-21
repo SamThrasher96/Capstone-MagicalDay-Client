@@ -30,6 +30,9 @@ export const RideDetails = ({ token }) => {
             <button className="button" onClick={() => {
                 navigate("/rides");
             }}>Back</button>
+            <button className="button" onClick={() => {
+                navigate(`/reservations/create?locationId=${ride.location.id}`);
+            }}>Make a reservation!</button>
         </div>
     );
 }

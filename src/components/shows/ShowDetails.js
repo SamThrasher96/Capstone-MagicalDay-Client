@@ -29,6 +29,9 @@ export const ShowDetails = ({ token }) => {
             <button className="button" onClick={() => {
                 navigate("/shows");
             }}>Back</button>
+            <button className="button" onClick={() => {
+            navigate(`/reservations/create?locationId=${show.location.id}`);
+            }}>Make a reservation!</button>
         </div>
     );
 }
