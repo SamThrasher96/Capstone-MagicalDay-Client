@@ -8,22 +8,6 @@
     position: relative;
 }
 
-.button {
-    margin: 10px;
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #0074e4;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.button:hover {
-    background-color: #0050a2;
-}
-
 .video-container {
     width: 100%;
     max-height: 100%;
@@ -43,22 +27,26 @@
     transform: translate(-50%, -50%);
 }
 
-.content {
+.content-card {
     position: absolute;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Adjust the alpha value to control transparency */
+    padding: 50px; /* Adjust the padding to increase card size */
     text-align: center;
-}
-
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    font-size: 1.5rem;
+    border-radius: 15px; /* Add this to make the card rounded */
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 50px; /* Increase the margin-top to move buttons down */
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Add margin to separate buttons */
+  .button-container > Button {
+    margin: 30px;
+    margin-top: 100px; /* Increase the margin-top value to move the buttons lower */
+  }
