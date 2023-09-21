@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getUserReservations, deleteReservation } from "../../managers/reservationManager";
 import { formatTime, formatDate } from "../../managers/generalManager";
 import "./reservations.css";

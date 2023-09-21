@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getUser, editUser } from "../../managers/userManager";
 import "./user.css";
 
@@ -11,8 +11,6 @@ export const EditUser = ({ token }) => {
         password: "",
         profile_picture: ""
     });
-    const id = users.id;
-
 
     useEffect(() => {
         getUser(token).then((data) => setUser(data[0]));

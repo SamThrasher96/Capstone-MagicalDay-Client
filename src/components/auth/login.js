@@ -6,6 +6,7 @@ import DisneyWorldRailroadImage from "/Users/samthrasher/workspace/capstone-magi
 import wdwEaridescent from "/Users/samthrasher/workspace/capstone-magicalday-client/src/components/auth/auth_images/wdw earidescent.jpeg";
 import MagicalDay from "/Users/samthrasher/workspace/capstone-magicalday-client/src/Magical Day.png";
 
+
 export const Login = ({ setToken, setUserId }) => {
   const email = useRef();
   const password = useRef();
@@ -33,16 +34,12 @@ export const Login = ({ setToken, setUserId }) => {
   return (
     <Grid container>
       <Grid item xs={6}>
-        {/* Left column with railroad image */}
         <img src={DisneyWorldRailroadImage} alt="Disney Railroad" style={{ width: "100%", objectFit: "cover", height: "100vh" }} />
       </Grid>
       <Grid item xs={6}>
-        {/* Right column with earidescent image and login form */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100vh", position: "relative" }}>
-          {/* Earidescent image */}
           <img src={wdwEaridescent} alt="Earidescent Image" style={{ width: "100%", objectFit: "cover", height: "100%", position: "absolute" }} />
 
-          {/* Login form */}
           <Card style={{
             width: "70%",
             backgroundColor: "rgba(245, 229, 221, 0.8)",
@@ -57,7 +54,7 @@ export const Login = ({ setToken, setUserId }) => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            zIndex: "1" // Add higher z-index value
+            zIndex: "1" 
           }}>
             <CardContent>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "20px" }}>

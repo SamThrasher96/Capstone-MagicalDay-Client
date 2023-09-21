@@ -52,8 +52,8 @@ h2 {
 
 .user-form {
     width: 500px;
-    margin: 0 auto; /* Center horizontally */
-    margin-top: 250px; /* Adjust the top margin as needed */
+    margin: 0 auto; 
+    margin-top: 250px; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;

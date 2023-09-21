@@ -5,7 +5,7 @@ import { formatTime } from "../../managers/generalManager";
 import { getMenuItemByLocationId } from "../../managers/menuManager";
 import "./restaurant.css";
 
-export const RestaurantDetails = ({ token }) => {
+export const RestaurantDetails = () => {
     const { restaurantId } = useParams();
     const [restaurant, setRestaurant] = useState({});
     const [menuItems, setMenuItems] = useState([]);

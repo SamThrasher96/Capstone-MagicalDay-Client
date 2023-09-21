@@ -4,7 +4,7 @@ import { getSingleRideDetails } from "../../managers/rideManager";
 import { formatTime } from "../../managers/generalManager";
 import "./ride.css";
 
-export const RideDetails = ({ token }) => {
+export const RideDetails = () => {
     const { rideId } = useParams();
     const [ride, setRide] = useState({});
     const navigate = useNavigate();

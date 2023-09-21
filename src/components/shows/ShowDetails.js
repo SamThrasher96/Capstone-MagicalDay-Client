@@ -4,7 +4,7 @@ import { getSingleShowDetails } from "../../managers/showManager";
 import { formatTime } from "../../managers/generalManager";
 import "./show.css"; 
 
-export const ShowDetails = ({ token }) => {
+export const ShowDetails = () => {
     const { showId } = useParams();
     const [show, setShow] = useState({});
     const navigate = useNavigate();

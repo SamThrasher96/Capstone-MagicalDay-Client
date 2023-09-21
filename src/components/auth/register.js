@@ -47,7 +47,6 @@ export const Register = ({ setToken, setUserId }) => {
   return (
     <Grid container>
       <Grid item xs={6}>
-        {/* Left column with Behind Castle image */}
         <img
           src={BehindCastleImage}
           alt="Behind Castle"
@@ -55,7 +54,6 @@ export const Register = ({ setToken, setUserId }) => {
         />
       </Grid>
       <Grid item xs={6}>
-        {/* Right column with registration form */}
         <div
           style={{
             display: "flex",

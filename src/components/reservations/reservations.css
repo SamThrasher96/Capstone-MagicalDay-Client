@@ -1,26 +1,24 @@
-/* reservations.css */
 .reservation-container {
 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    min-height: 100vh; /* Ensure it takes up at least the full viewport height */
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
 }
 
-/* Add this to center the form within the container */
 .box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Center the text within the form */
+    text-align: center;
 }
 
 .reservations-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Center the cards horizontally within the container */
+    justify-content: center; 
     margin-top: 250px;
 }
 
@@ -28,16 +26,16 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 20px; /* Increase padding for larger cards */
+    padding: 20px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-    width: calc(25% - 20px); /* Adjust as needed to control the number of cards per row and card width */
-    min-width: 250px; /* Set a minimum card width */
+    width: calc(25% - 20px); 
+    min-width: 250px; 
 }
 
 .reservation-card:hover {
-    transform: scale(1.02); /* Add a slight zoom effect on hover */
+    transform: scale(1.02); 
 }
 
 .reservation-location {
@@ -45,21 +43,19 @@
 }
 
 .reservation-guest {
-    margin-top: 10px; /* Increase margin for better spacing */
+    margin-top: 10px; 
 }
 
 .reservation-date {
-    margin-top: 10px; /* Increase margin for better spacing */
+    margin-top: 10px; 
 }
 
 .reservation-time {
-    margin-top: 10px; /* Increase margin for better spacing */
+    margin-top: 10px; 
 }
 
-/* Placeholder for the reservation image (adjust as needed) */
 .reservation-image {
     width: 100%;
     height: auto;
-    /* Add additional styling for the image here */
 }
 
