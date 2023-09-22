@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUserReservations, deleteReservation } from "../../managers/reservationManager";
 import { formatTime, formatDate } from "../../managers/generalManager";
+import { Button, Card, CardContent, Grid, Typography, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import MyReservations from "/Users/samthrasher/workspace/capstone-magicalday-client/src/components/reservations/MyReservations.png"
 import "./reservations.css";
 
 export const UserReservations = ({ token }) => {
@@ -16,10 +19,9 @@ export const UserReservations = ({ token }) => {
         });
     }, [token]);
 
-
     const handleDelete = (reservationId) => {
         const confirmed = window.confirm("Are you sure you want to delete this reservation?");
-        
+
         if (confirmed) {
             deleteReservation({ reservationId }).then(() => {
                 getUserReservations({ token }).then((data) => {
@@ -47,36 +49,64 @@ export const UserReservations = ({ token }) => {
     };
 
     return (
-        <div className="reservations-container">
-            <h2>Your Reservations</h2>
-            <div className="reservations-list">
-                {reservations.map((reservation) => (
-                    <div
-                        className="reservation-card"
-                        key={`reservation--${reservation.id}`}
-                        onClick={() => {
-                            navigate(`/reservations`);
-                        }}
-                    >
-                        <img src={reservation.reservation_image} alt={reservation.reservation_location_name} className="reservation-image" />
-                        <div className="reservation-location">Your reservation is at {reservation.reservation_location_name}</div>
-                        <div className="reservation-date">Reservation Date: {formatDate(reservation.date)}</div>
-                        <div className="reservation-time">Reservation time: {formatTime(reservation.time)}</div>
-                        <button onClick={() => handleDelete(reservation.id)} className="delete-button">Delete</button>
-                    </div>
-                ))}
+        <div className="reservations-container custom-bg-color">
+            <div style={{ textAlign: "center", padding: "40px 0" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "20px" }}>
+                <img src={MyReservations} alt="My Reservations Logo" style={{ width: "400px", height: "auto" }} />
             </div>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => {
+                        navigate("/reservations/create");
+                    }}
+                    style={{ marginTop: "40px", marginBottom: "40px" }}
+                >
+                    Make a Reservation
+                </Button>
+            </div>
+            <Grid container spacing={2}>
+                {reservations.map((reservation) => (
+                    <Grid item xs={12} sm={6} md={4} key={`reservation--${reservation.id}`}>
+                        <Card className="reservation-card" style={{ height: "100%" }}>
+                            <img
+                                src={reservation.reservation_image}
+                                alt={reservation.reservation_location_name}
+                                style={{ height: "200px", objectFit: "cover", width: "100%" }}
+                            />
+                            <CardContent>
+                                <Typography variant="h6">{reservation.reservation_location_name}</Typography>
+                                <Typography variant="body2">Reservation Date: {formatDate(reservation.date)}</Typography>
+                                <Typography variant="body2">Reservation Time: {formatTime(reservation.time)}</Typography>
+                                <IconButton
+                                    color="error"
+                                    onClick={() => handleDelete(reservation.id)}
+                                    style={{ marginTop: "10px" }}
+                                >
+                                    <DeleteIcon />
+                                </IconButton>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
 
             {showConfirmation && (
                 <div className="confirmation-modal">
-                    <p>Are you sure you want to delete this reservation?</p>
-                    <button onClick={confirmDelete}>Yes</button>
-                    <button onClick={cancelDelete}>No</button>
+                    <Typography variant="body1">Are you sure you want to delete this reservation?</Typography>
+                    <Button variant="contained" color="error" onClick={confirmDelete}>
+                        Yes
+                    </Button>
+                    <Button variant="contained" onClick={cancelDelete}>
+                        No
+                    </Button>
                 </div>
             )}
-            <button className="button" onClick={() => {
-                    navigate("/reservations/create");
-                }}>Make a reservation!</button>
         </div>
     );
 };
+
+
+
+
+
