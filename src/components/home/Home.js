@@ -18,7 +18,7 @@ export const Home = () => {
             <CardContent>
               <div
                 style={{
-                  display: "flex",
+                 
                   flexDirection: "column",
                   alignItems: "center",
                   marginBottom: "40px" // Increase the margin for the MagicalDay image
