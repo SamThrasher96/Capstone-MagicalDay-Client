@@ -83,3 +83,9 @@ body {
     object-fit: cover;
 }
 
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }

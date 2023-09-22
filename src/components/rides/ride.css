@@ -62,3 +62,10 @@ body {
 .card-content {
     flex-grow: 1;
 }
+
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
