@@ -35,7 +35,7 @@ export const NavBar = ({ token, setToken }) => {
     };
 
     return (
-        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+        <div style={{ position: "relative" }}>
             <Avatar
                 alt="User Avatar"
                 src={guests[0]?.profile_picture} 
@@ -46,6 +46,9 @@ export const NavBar = ({ token, setToken }) => {
                     zIndex: 100,
                     width: "70px", 
                     height: "70px", 
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
                 }}
             />
             <Menu
