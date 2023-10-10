@@ -55,7 +55,7 @@ export const RideDetails = () => {
                                 navigate(`/reservations/create?locationId=${ride.location.id}`);
                             }}
                         >
-                            Make a reservation!
+                            Make a reservation:
                         </Button>
                         <Button
                             variant="contained"
